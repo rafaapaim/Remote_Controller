@@ -2,7 +2,7 @@ import time
 import random
 
 class Remote_Controler():
-    def __init__(self, TV_Status = "OFF", TV_Volume = "0", Channel_List = ["BBC1"], Channel_Name = "BBC1"):
+    def __init__(self, TV_Status = "OFF", TV_Volume = 0, Channel_List = ["BBC1"], Channel_Name = "BBC1"):
         print("Creating a remote controller...")
 
         self.TV_Status = TV_Status
@@ -28,14 +28,14 @@ class Remote_Controler():
         while True:
             Answer = input("Volume Down: '-' \nVolume Up: '+' \nExit: 'exit'")
 
-            if Answer == "-":
+            if Answer == '-':
                 if self.TV_Volume != 0:
                     self.TV_Volume -= 1
                     print("Volume: ", self.TV_Volume)
-            elif Answer == "+":
+            elif Answer == '+':
                 if self.TV_Volume != 50:
                     self.TV_Volume += 1
-                    print("Volume: ", self.TV_Volume)
+                    print("Volume: ", str(self.TV_Volume))
             else:
                 print("This sound level has updated.")
                 break
